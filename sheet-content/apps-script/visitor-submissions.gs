@@ -212,10 +212,10 @@ function doPost(e) {
     const p = payload.personal || {};
     const now = new Date();
 
-    // 1. Authoritative ID: use payload.id passed from frontend so pass image, PDF, email, and sheet all match!
+    // Use the ID sent from frontend (already generated)
     const id = payload.id || generateVisitorId(sheet);
 
-    // 2. Append single record to Google Sheet
+    // ── 1. APPEND ONLY ONE ROW ──
     sheet.appendRow([
       now,
       id,
@@ -234,7 +234,7 @@ function doPost(e) {
 
     const newRow = sheet.getLastRow();
 
-    // Add checkbox data validation to the Status column on the newly appended row
+    // Apply checkbox validation
     const statusCol = HEADERS.length;
     const rule = SpreadsheetApp.newDataValidation().requireCheckbox().build();
     sheet.getRange(newRow, statusCol).setDataValidation(rule);
@@ -243,12 +243,12 @@ function doPost(e) {
       sheet.getRange(newRow, 1, 1, HEADERS.length).setBackground(THEME.altRow);
     }
 
-    // 3. Process Pass Attachments
+    // ── 2. PROCESS ATTACHMENTS (PNG + PDF) ──
     const attachments = [];
     const inlineImages = {};
     const baseFileName = EVENT_NAME + " - Visitor Pass - " + id;
 
-    // PNG Image Attachment & Inline Display
+    // PNG Image
     if (payload.passImage) {
       try {
         const rawImg = extractBase64(payload.passImage);
@@ -258,16 +258,14 @@ function doPost(e) {
           baseFileName + ".png"
         );
         inlineImages["pass_image_cid"] = imgBlob;
-        if (payload.attachImage !== false) {
-          attachments.push(imgBlob);
-        }
-        saveToDrive(imgBlob);
+        if (payload.attachImage !== false) attachments.push(imgBlob);
+        if (DRIVE_FOLDER_ID) saveToDrive(imgBlob);
       } catch (err) {
-        Logger.log("PNG decoding error: " + err);
+        Logger.log("PNG error: " + err);
       }
     }
 
-    // Print-Ready PDF Attachment (3in × 4in)
+    // PDF Attachment
     if (payload.passPdf && payload.attachPdf !== false) {
       try {
         const rawPdf = extractBase64(payload.passPdf);
@@ -277,24 +275,24 @@ function doPost(e) {
           baseFileName + ".pdf"
         );
         attachments.push(pdfBlob);
-        saveToDrive(pdfBlob);
+        if (DRIVE_FOLDER_ID) saveToDrive(pdfBlob);
       } catch (err) {
-        Logger.log("PDF decoding error: " + err);
+        Logger.log("PDF error: " + err);
       }
     }
 
-    // 4. Send Confirmation Email to Visitor
+    // ── 3. SEND ONLY ONE EMAIL TO VISITOR ──
     if (EMAIL_CONFIG.sendCustomerEmail && p.email) {
-      const subject = "Your Official Visitor Pass — " + EVENT_NAME + " (" + id + ")";
+      const subject = `Your Official Visitor Pass — ${EVENT_NAME} (${id})`;
       const htmlBody = buildVisitorEmail(id, p, !!inlineImages["pass_image_cid"]);
 
       const mailOptions = {
         name: EVENT_NAME,
         htmlBody: htmlBody,
         replyTo: EVENT_EMAIL,
+        attachments: attachments.length > 0 ? attachments : undefined,
+        inlineImages: Object.keys(inlineImages).length > 0 ? inlineImages : undefined,
       };
-      if (attachments.length > 0) mailOptions.attachments = attachments;
-      if (Object.keys(inlineImages).length > 0) mailOptions.inlineImages = inlineImages;
 
       try {
         GmailApp.sendEmail(p.email, subject, "", mailOptions);
@@ -305,15 +303,14 @@ function doPost(e) {
           replyTo: EVENT_EMAIL,
           subject: subject,
           htmlBody: htmlBody,
-          attachments: attachments,
-          inlineImages: inlineImages,
+          ...mailOptions,
         });
       }
     }
 
-    // 5. Send Notification to Internal Organiser Team
+    // ── 4. OPTIONAL: One Internal Notification ──
     if (EMAIL_CONFIG.sendInternalEmail && EMAIL_CONFIG.internalRecipients.length > 0) {
-      const internalSubject = "[NEW VISITOR] Pass Issued: " + (p.fullName || "Visitor") + " (" + id + ")";
+      const internalSubject = `[NEW VISITOR] Pass Issued: ${p.fullName || "Visitor"} (${id})`;
       const internalHtmlBody = buildInternalVisitorNotification(id, p);
 
       const internalMailOptions = {
