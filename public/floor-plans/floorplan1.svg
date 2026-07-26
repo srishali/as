@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 2100 1450" style="enable-background:new 0 0 2100 1450;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#A8D4AF;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#00CC00;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#009846;}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#CCFFCC;}
+	.st4{fill-rule:evenodd;clip-rule:evenodd;fill:#9D9E9E;}
+	.st5{fill-rule:evenodd;clip-rule:evenodd;fill:#727271;}
+	.st6{fill-rule:evenodd;clip-rule:evenodd;fill:#A50022;}
+	.st7{fill-rule:evenodd;clip-rule:evenodd;fill:#FF0000;}
+	.st8{fill-rule:evenodd;clip-rule:evenodd;fill:#FFCCCC;}
+	.st9{fill-rule:evenodd;clip-rule:evenodd;fill:#FF5050;}
+	.st10{fill-rule:evenodd;clip-rule:evenodd;fill:#FEFEFE;}
+</style>
+<g id="Carpet_Area">
+	<rect id="Carpet_Area_1_" x="129.9" y="123.4" class="st0" width="1840.1" height="1203.1"/>
+</g>
+<g id="Registration_Counter">
+	<rect id="Registration_Counter_1_" x="979.2" y="123.4" class="st1" width="141.5" height="35.4"/>
+</g>
+<g id="Entry">
+	<rect id="Entry_1_" x="1120.8" y="123.4" class="st2" width="70.8" height="106.2"/>
+</g>
+<g id="Exit">
+	<rect id="Exit_1_" x="908.5" y="123.4" class="st2" width="70.8" height="106.2"/>
+</g>
+<g id="Stage">
+	<rect id="Stage_1_" x="979.2" y="158.8" class="st3" width="141.5" height="70.8"/>
+</g>
+<g id="Waiting_Lounge_1_">
+	<rect id="Waiting_Lounge_3_" x="519.2" y="123.4" class="st4" width="106.2" height="70.8"/>
+</g>
+<g id="Waiting_Lounge_4_">
+	<rect id="Waiting_Lounge_5_" x="1474.6" y="123.4" class="st4" width="106.2" height="70.8"/>
+</g>
+<g id="Vehicle_Passage">
+	<polygon id="Vehicle_Passage_1_" class="st5" points="1580.8,123.4 1580.8,194.2 1899.3,194.2 1899.3,1255.8 1085.4,1255.8 
+		1085.4,477.3 1014.6,477.3 1014.6,1255.8 200.7,1255.8 200.7,194.2 518.8,194.2 518.8,123.4 129.9,123.4 129.9,194.2 129.9,1255.8 
+		129.9,1255.8 129.9,1326.6 1970.1,1326.6 1970.1,1255.8 1970.1,1255.8 1970.1,194.2 1970.1,123.4 	"/>
+</g>
+<g id="TSP01">
+	<rect id="TSP01_1_" x="979.2" y="300.4" class="st6" width="141.5" height="70.8"/>
+</g>
+<g id="CSP02">
+	<rect id="CSP02_1_" x="1156.2" y="300.4" class="st7" width="70.8" height="70.8"/>
+</g>
+<g id="RGS03">
+	<rect id="RGS03_1_" x="1226.9" y="335.7" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS04">
+	<rect id="RGS04_1_" x="1297.7" y="335.7" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS05">
+	<rect id="RGS05_1_" x="1368.5" y="335.7" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS06">
+	<rect id="RGS06_1_" x="1439.3" y="300.4" class="st8" width="35.4" height="70.8"/>
+</g>
+<g id="RGS07">
+	<rect id="RGS07_1_" x="1368.5" y="300.4" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS08">
+	<rect id="RGS08_1_" x="1297.7" y="300.4" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS09">
+	<rect id="RGS09_1_" x="1226.9" y="300.4" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="ASP10">
+	<rect id="ASP10_1_" x="1191.5" y="123.4" class="st9" width="70.8" height="141.5"/>
+</g>
+<g id="ASP11">
+	<rect id="ASP11_1_" x="1262.3" y="123.4" class="st9" width="70.8" height="141.5"/>
+</g>
+<g id="ASP12">
+	<rect id="ASP12_1_" x="1333.1" y="123.4" class="st9" width="70.8" height="141.5"/>
+</g>
+<g id="ASP13">
+	<rect id="ASP13_1_" x="1403.9" y="123.4" class="st9" width="70.8" height="141.5"/>
+</g>
+<g id="UCS14">
+	<polygon id="UCS14_1_" class="st10" points="1899.3,265 1510,265 1510,194.2 1899.3,194.2 	"/>
+</g>
+<g id="UCS15">
+	<polygon id="UCS15_1_" class="st10" points="1899.3,406.5 1510,406.5 1510,335.7 1899.3,335.7 	"/>
+</g>
+<g id="UCS16">
+	<polygon id="UCS16_1_" class="st10" points="1899.3,477.3 1510,477.3 1510,406.5 1899.3,406.5 	"/>
+</g>
+<g id="UCS17">
+	<polygon id="UCS17_1_" class="st10" points="1899.3,618.8 1510,618.8 1510,548.1 1899.3,548.1 	"/>
+</g>
+<g id="UCS18">
+	<polygon id="UCS18_1_" class="st10" points="1899.3,689.6 1510,689.6 1510,618.8 1899.3,618.8 	"/>
+</g>
+<g id="UCS19">
+	<polygon id="UCS19_1_" class="st10" points="1899.3,831.2 1510,831.2 1510,760.4 1899.3,760.4 	"/>
+</g>
+<g id="UCS20">
+	<polygon id="UCS20_1_" class="st10" points="1899.3,901.9 1510,901.9 1510,831.2 1899.3,831.2 	"/>
+</g>
+<g id="UCS21">
+	<polygon id="UCS21_1_" class="st10" points="1899.3,1043.5 1510,1043.5 1510,972.7 1899.3,972.7 	"/>
+</g>
+<g id="UCS22">
+	<polygon id="UCS22_1_" class="st10" points="1899.3,1114.3 1510,1114.3 1510,1043.5 1899.3,1043.5 	"/>
+</g>
+<g id="UCS23">
+	<polygon id="UCS23_1_" class="st10" points="1899.3,1255.8 1510,1255.8 1510,1185 1899.3,1185 	"/>
+</g>
+<g id="UCS24">
+	<polygon id="UCS24_1_" class="st10" points="1474.6,1255.8 1085.4,1255.8 1085.4,1185 1474.6,1185 	"/>
+</g>
+<g id="UCS25">
+	<polygon id="UCS25_1_" class="st10" points="1474.6,1114.3 1085.4,1114.3 1085.4,1043.5 1474.6,1043.5 	"/>
+</g>
+<g id="UCS26">
+	<polygon id="UCS26_1_" class="st10" points="1474.6,1043.5 1085.4,1043.5 1085.4,972.7 1474.6,972.7 	"/>
+</g>
+<g id="UCS27">
+	<polygon id="UCS27_1_" class="st10" points="1474.6,901.9 1085.4,901.9 1085.4,831.2 1474.6,831.2 	"/>
+</g>
+<g id="UCS28">
+	<polygon id="UCS28_1_" class="st10" points="1474.6,831.2 1085.4,831.2 1085.4,760.4 1474.6,760.4 	"/>
+</g>
+<g id="UCS29">
+	<polygon id="UCS29_1_" class="st10" points="1474.6,689.6 1085.4,689.6 1085.4,618.8 1474.6,618.8 	"/>
+</g>
+<g id="UCS30">
+	<polygon id="UCS30_1_" class="st10" points="1474.6,618.8 1085.4,618.8 1085.4,548.1 1474.6,548.1 	"/>
+</g>
+<g id="RGS31">
+	<rect id="RGS31_1_" x="1191.5" y="441.9" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS32">
+	<rect id="RGS32_1_" x="1262.3" y="441.9" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS33">
+	<rect id="RGS33_1_" x="1333.1" y="441.9" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS34">
+	<rect id="RGS34_1_" x="1403.9" y="441.9" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS35">
+	<rect id="RGS35_1_" x="1403.9" y="406.5" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS36">
+	<rect id="RGS36_1_" x="1333.1" y="406.5" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGD37">
+	<rect id="RGD37_1_" x="1262.3" y="406.5" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS38">
+	<rect id="RGS38_1_" x="1191.5" y="406.5" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="ASP39">
+	<rect id="ASP39_1_" x="1120.8" y="406.5" class="st9" width="70.8" height="70.8"/>
+</g>
+<g id="ASP40">
+	<rect id="ASP40_1_" x="1050" y="406.5" class="st9" width="70.8" height="70.8"/>
+</g>
+<g id="ASP41">
+	<rect id="ASP41_1_" x="979.2" y="406.5" class="st9" width="70.8" height="70.8"/>
+</g>
+<g id="ASP42">
+	<rect id="ASP42_1_" x="908.5" y="406.5" class="st9" width="70.8" height="70.8"/>
+</g>
+<g id="RGS43">
+	<rect id="RGS43_1_" x="837.7" y="406.5" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS44">
+	<rect id="RGS44_1_" x="766.9" y="406.5" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS45">
+	<rect id="RGS45_1_" x="696.1" y="406.5" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS46">
+	<rect id="RGS46_1_" x="625.4" y="406.5" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS47">
+	<rect id="RGS47_1_" x="625.4" y="441.9" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS48">
+	<rect id="RGS48_1_" x="696.1" y="441.9" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS49">
+	<rect id="RGS49_1_" x="766.9" y="441.9" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS50">
+	<rect id="RGS50_1_" x="837.7" y="441.9" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="UCS51">
+	<polygon id="UCS51_1_" class="st10" points="1014.6,618.8 625.4,618.8 625.4,548.1 1014.6,548.1 	"/>
+</g>
+<g id="UCS52">
+	<polygon id="UCS52_1_" class="st10" points="1014.6,689.6 625.4,689.6 625.4,618.8 1014.6,618.8 	"/>
+</g>
+<g id="UCS53">
+	<polygon id="UCS53_1_" class="st10" points="1014.6,831.2 625.4,831.2 625.4,760.4 1014.6,760.4 	"/>
+</g>
+<g id="UCS54">
+	<polygon id="UCS54_1_" class="st10" points="1014.6,901.9 625.4,901.9 625.4,831.2 1014.6,831.2 	"/>
+</g>
+<g id="UCS55">
+	<polygon id="UCS55_1_" class="st10" points="1014.6,1043.5 625.4,1043.5 625.4,972.7 1014.6,972.7 	"/>
+</g>
+<g id="UCS56">
+	<polygon id="UCS56_1_" class="st10" points="1014.6,1114.3 625.4,1114.3 625.4,1043.5 1014.6,1043.5 	"/>
+</g>
+<g id="UCS57">
+	<polygon id="UCS57_1_" class="st10" points="1014.6,1255.8 625.4,1255.8 625.4,1185 1014.6,1185 	"/>
+</g>
+<g id="UCS58">
+	<polygon id="UCS58_1_" class="st10" points="590,1255.8 200.7,1255.8 200.7,1185 590,1185 	"/>
+</g>
+<g id="UCS59">
+	<polygon id="UCS59_1_" class="st10" points="590,1114.3 200.7,1114.3 200.7,1043.5 590,1043.5 	"/>
+</g>
+<g id="UCS60">
+	<polygon id="UCS60_1_" class="st10" points="590,1043.5 200.7,1043.5 200.7,972.7 590,972.7 	"/>
+</g>
+<g id="UCS61">
+	<polygon id="UCS61_1_" class="st10" points="590,901.9 200.7,901.9 200.7,831.2 590,831.2 	"/>
+</g>
+<g id="UCS62">
+	<polygon id="UCS62_1_" class="st10" points="590,831.2 200.7,831.2 200.7,760.4 590,760.4 	"/>
+</g>
+<g id="UCS63">
+	<polygon id="UCS63_1_" class="st10" points="590,689.6 200.7,689.6 200.7,618.8 590,618.8 	"/>
+</g>
+<g id="UCS64">
+	<polygon id="UCS64_1_" class="st10" points="590,618.8 200.7,618.8 200.7,548.1 590,548.1 	"/>
+</g>
+<g id="UCS65">
+	<polygon id="UCS65_1_" class="st10" points="590,477.3 200.7,477.3 200.7,406.5 590,406.5 	"/>
+</g>
+<g id="UCS66">
+	<polygon id="UCS66_1_" class="st10" points="590,406.5 200.7,406.5 200.7,335.7 590,335.7 	"/>
+</g>
+<g id="UCS67">
+	<polygon id="UCS67_1_" class="st10" points="590,265 200.7,265 200.7,194.2 590,194.2 	"/>
+</g>
+<g id="ASP68">
+	<rect id="ASP68_1_" x="625.4" y="123.4" class="st9" width="70.8" height="141.5"/>
+</g>
+<g id="ASP69">
+	<rect id="ASP69_1_" x="696.1" y="123.4" class="st9" width="70.8" height="141.5"/>
+</g>
+<g id="ASP70">
+	<rect id="ASP70_1_" x="766.9" y="123.4" class="st9" width="70.8" height="141.5"/>
+</g>
+<g id="ASP71">
+	<rect id="ASP71_1_" x="837.7" y="123.4" class="st9" width="70.8" height="141.5"/>
+</g>
+<g id="RGS72">
+	<rect id="RGS72_1_" x="802.3" y="300.4" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS73">
+	<rect id="RGS73_1_" x="731.5" y="300.4" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS74">
+	<rect id="RGS74_1_" x="660.7" y="300.4" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS06_4_">
+	<rect id="RGS06_5_" x="625.4" y="300.4" class="st8" width="35.4" height="70.8"/>
+</g>
+<g id="RGS76">
+	<rect id="RGS76_1_" x="660.7" y="335.7" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS77">
+	<rect id="RGS77_1_" x="731.5" y="335.7" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="RGS78">
+	<rect id="RGS78_1_" x="802.3" y="335.7" class="st8" width="70.8" height="35.4"/>
+</g>
+<g id="CSP79">
+	<rect id="CSP79_1_" x="873.1" y="300.4" class="st7" width="70.8" height="70.8"/>
+</g>
+</svg>

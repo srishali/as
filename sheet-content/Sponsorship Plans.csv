@@ -1,0 +1,5 @@
+Status,Order,Name,Accent Gradient,Featured,Perks
+TRUE,1,Title Sponsor,from-accent-700 to-accent-600,TRUE,Naming rights & mainstage branding | Keynote & ribbon-cutting slot | Largest premium pavilion | Full media & digital campaign
+TRUE,2,Platinum Partner,from-brand-700 to-brand-600,FALSE,Co-presenting branding | Award-night sponsorship | Premium lounge access | Large corner pavilion
+TRUE,3,Gold Partner,from-gold-500 to-gold-400,FALSE,Category exclusivity | Zone sponsorship | Speaking opportunity | Standard pavilion
+TRUE,4,Silver Associate,from-slate-500 to-slate-400,FALSE,Logo & signage visibility | Booth + meeting room | App & guide listing | Networking access

@@ -1,0 +1,13 @@
+Status,Order,Icon,Title,Description
+TRUE,1,Car,Passenger & Commercial Vehicles,OEMs, CV makers and body builders showcasing new models and platforms.
+TRUE,2,BatteryCharging,Electric & Hybrid Vehicles,EV manufacturers, battery cell makers and drivetrain innovators.
+TRUE,3,Bike,Two-Wheelers & Micro-Mobility,Motorcycles, scooters, e-rickshaws and last-mile mobility solutions.
+TRUE,4,Cpu,Auto Components & Electronics,Tier-1-3 suppliers, ECUs, sensors and connected-car technology.
+TRUE,5,Settings2,Tyres, Batteries & Consumables,Tyre brands, energy storage, lubricants and aftermarket parts.
+TRUE,6,PlugZap,Charging & Energy Infrastructure,Charging networks, swappable stations and grid technology.
+TRUE,7,Truck,Logistics & Supply Chain,Freight, warehousing, EV fleet operators and 3PL providers.
+TRUE,8,ShieldCheck,Finance, Leasing & Insurance,Auto finance, fleet leasing, insurance and warranty providers.
+TRUE,9,Wrench,Service, Repair & Aftermarket,Workshop equipment, diagnostics, accessories and detailing.
+TRUE,10,FlaskConical,R&D, Design & Engineering,Design houses, testing labs, simulation and prototyping firms.
+TRUE,11,Banknote,Investors & Venture Capital,Funds and accelerators backing the next mobility unicorns.
+TRUE,12,Globe2,Government & Trade Bodies,Policy makers, embassies, consulates and industry associations.
