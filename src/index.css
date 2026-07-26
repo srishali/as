@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  /* Typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand — deep indigo/violet (#270585 base) */
+  --color-brand-50: #f2f1fb;
+  --color-brand-100: #e4e2f6;
+  --color-brand-200: #cbc5ee;
+  --color-brand-300: #a79ce1;
+  --color-brand-400: #8067cf;
+  --color-brand-500: #5d3fb4;
+  --color-brand-600: #452998;
+  --color-brand-700: #270585;
+  --color-brand-800: #220673;
+  --color-brand-900: #1d085e;
+  --color-brand-950: #12033a;
+
+  /* Accent — deep maroon/crimson (#850527 base) */
+  --color-accent-50: #fdf2f3;
+  --color-accent-100: #fbe4e8;
+  --color-accent-200: #f8ccd5;
+  --color-accent-300: #f1a3b3;
+  --color-accent-400: #e66f88;
+  --color-accent-500: #d2405f;
+  --color-accent-600: #b32748;
+  --color-accent-700: #850527;
+  --color-accent-800: #740625;
+  --color-accent-900: #620a24;
+  --color-accent-950: #38030f;
+
+  /* Gold — premium accents */
+  --color-gold-300: #f0d27a;
+  --color-gold-400: #e3bd52;
+  --color-gold-500: #cda12b;
+
+  /* Animations */
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-marquee-rev: marquee-rev 38s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shine: shine 6s linear infinite;
+  --animate-gradient: gradient-pan 12s ease infinite;
+  --animate-pulse-ring: pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-rev {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+@keyframes gradient-pan {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(133, 5, 39, 0.45); }
+  70% { box-shadow: 0 0 0 16px rgba(133, 5, 39, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(133, 5, 39, 0); }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-white font-sans text-slate-700 antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-slate-900;
+  }
+  ::selection {
+    background-color: var(--color-brand-700);
+    color: #fff;
+  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-track { background: #f1f1f6; }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--color-brand-700), var(--color-accent-700));
+    border-radius: 999px;
+    border: 3px solid #f1f1f6;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(100deg, var(--color-brand-600), var(--color-accent-600));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-light {
+    background: linear-gradient(100deg, #ffffff, var(--color-brand-200));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .bg-grid-dark {
+    background-image:
+      linear-gradient(to right, rgba(39,5,133,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(39,5,133,0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+  }
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  }
+}
