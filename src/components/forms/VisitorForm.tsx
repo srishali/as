@@ -75,7 +75,7 @@ export function VisitorForm() {
       const realId = regResult.id || generateId("visitor");
 
       // ── STEP 2: Generate QR Code & draw Canvas Pass using the REAL ID ──
-      const qrText = `${EVENT.name.toUpperCase().replace(/\s+/g, "-")}|VISITOR|${realId}|${personal.fullName}`;
+      const qrText = `${realId}|${personal.fullName}|${personal.phone}`;
       const qrDataUrl = await generateQRDataUrl(qrText);
       const issuedAt = new Date().toLocaleDateString("en-IN", {
         day: "2-digit",
