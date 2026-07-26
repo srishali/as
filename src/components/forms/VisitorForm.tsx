@@ -64,10 +64,10 @@ async function handleSubmit(e: React.FormEvent) {
   setStep("generating");
 
   try {
-    // ── STEP 1: Generate ID first (for pass) ──
-    const realId = generateId("visitor"); // or fetch from backend if needed
+    // ── Generate ID first (will be used for both sheet and pass) ──
+    const realId = generateId("visitor");
 
-    // ── STEP 2: Generate QR & Pass Images ──
+    // ── Generate QR Code & Canvas Pass using the REAL ID ──
     const qrText = `${EVENT.name.toUpperCase().replace(/\s+/g, "-")}|VISITOR|${realId}|${personal.fullName}`;
     const qrDataUrl = await generateQRDataUrl(qrText);
     const issuedAt = new Date().toLocaleDateString("en-IN", {
@@ -93,10 +93,10 @@ async function handleSubmit(e: React.FormEvent) {
     setPassPng(png);
     setPassData(finalPass);
 
-    // ── STEP 3: SINGLE SUBMISSION (Sheet + Email) ──
+    // ── SINGLE SUBMISSION: Sheet + Email in one call ──
     await submitRegistration({
       type: "visitor",
-      id: realId,
+      id: realId,                    // ← Pass the ID so sheet and email use the same one
       personal: { ...personal, ...location, interest: "Visitor Registration" },
       passImage: png,
       passPdf: pdfBase64,
@@ -107,12 +107,25 @@ async function handleSubmit(e: React.FormEvent) {
     setStep("done");
   } catch (err) {
     console.error("Visitor registration error:", err);
-    // Fallback logic (same as before)
+
+    // Fallback (still shows a pass locally)
     const localId = generateId("visitor");
-    // ... fallback pass generation ...
+    const qrDataUrl = await generateQRDataUrl(`VISITOR|${localId}|${personal.fullName}`);
+    const fallbackPass: PassData = {
+      id: localId,
+      fullName: personal.fullName,
+      gender: personal.gender,
+      dob: personal.dob,
+      qrDataUrl,
+      issuedAt: new Date().toLocaleDateString("en-IN"),
+    };
+    const png = await renderPassToCanvasDataUrl(fallbackPass);
+    setPassPng(png);
+    setPassData(fallbackPass);
     setStep("done");
   }
-}
+}  
+  
   function reset() {
     setPersonal(PERSONAL_INIT);
     setPTouched(PERSONAL_TOUCHED_INIT);
