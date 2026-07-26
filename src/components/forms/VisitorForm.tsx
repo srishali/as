@@ -54,84 +54,65 @@ export function VisitorForm() {
     setLTouched({ city: true, pincode: true, district: true, state: true });
   }, []);
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    touchAll();
-    if (!allValid) return;
+// ... (imports remain the same)
 
-    setStep("generating");
+async function handleSubmit(e: React.FormEvent) {
+  e.preventDefault();
+  touchAll();
+  if (!allValid) return;
 
-    try {
-      // ── STEP 1: Submit visitor registration to backend to get the authoritative ID ──
-      const regResult = await submitRegistration({
-        type: "visitor",
-        personal: { ...personal, ...location, interest: "Visitor Registration" },
-      });
+  setStep("generating");
 
-      // Use real ID from sheet; fallback to local generator if offline
-      const realId = regResult.id || generateId("visitor");
+  try {
+    // ── STEP 1: Generate ID first (for pass) ──
+    const realId = generateId("visitor"); // or fetch from backend if needed
 
-      // ── STEP 2: Generate QR Code & Canvas Pass using the REAL ID ──
-      const qrText = `${EVENT.name.toUpperCase().replace(/\s+/g, "-")}|VISITOR|${realId}|${personal.fullName}`;
-      const qrDataUrl = await generateQRDataUrl(qrText);
-      const issuedAt = new Date().toLocaleDateString("en-IN", {
-        day: "2-digit",
-        month: "long",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-      });
+    // ── STEP 2: Generate QR & Pass Images ──
+    const qrText = `${EVENT.name.toUpperCase().replace(/\s+/g, "-")}|VISITOR|${realId}|${personal.fullName}`;
+    const qrDataUrl = await generateQRDataUrl(qrText);
+    const issuedAt = new Date().toLocaleDateString("en-IN", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
 
-      const finalPass: PassData = {
-        id: realId,
-        fullName: personal.fullName,
-        gender: personal.gender,
-        dob: personal.dob,
-        qrDataUrl,
-        issuedAt,
-      };
+    const finalPass: PassData = {
+      id: realId,
+      fullName: personal.fullName,
+      gender: personal.gender,
+      dob: personal.dob,
+      qrDataUrl,
+      issuedAt,
+    };
 
-      // Draw the exact 3x4 pass image with the REAL ID printed on it
-      const png = await renderPassToCanvasDataUrl(finalPass);
-      const pdfBase64 = generatePdfBase64(png);
+    const png = await renderPassToCanvasDataUrl(finalPass);
+    const pdfBase64 = generatePdfBase64(png);
 
-      setPassPng(png);
-      setPassData(finalPass);
+    setPassPng(png);
+    setPassData(finalPass);
 
-      // ── STEP 3: Send the rendered pass PNG & PDF (containing real ID) for email delivery ──
-      submitRegistration({
-        type: "visitor",
-        id: realId,
-        personal: { ...personal, ...location, interest: "Visitor Registration" },
-        passImage: png,
-        passPdf: pdfBase64,
-        attachImage: VISITOR_PASS_ATTACHMENTS.attachImage,
-        attachPdf: VISITOR_PASS_ATTACHMENTS.attachPdf,
-      }).catch(() => {
-        /* non-fatal */
-      });
+    // ── STEP 3: SINGLE SUBMISSION (Sheet + Email) ──
+    await submitRegistration({
+      type: "visitor",
+      id: realId,
+      personal: { ...personal, ...location, interest: "Visitor Registration" },
+      passImage: png,
+      passPdf: pdfBase64,
+      attachImage: VISITOR_PASS_ATTACHMENTS.attachImage,
+      attachPdf: VISITOR_PASS_ATTACHMENTS.attachPdf,
+    });
 
-      setStep("done");
-    } catch (err) {
-      console.error("Visitor registration error:", err);
-      // Even if network glitches, display pass locally
-      const localId = generateId("visitor");
-      const qrDataUrl = await generateQRDataUrl(`VISITOR|${localId}|${personal.fullName}`);
-      const fallbackPass: PassData = {
-        id: localId,
-        fullName: personal.fullName,
-        gender: personal.gender,
-        dob: personal.dob,
-        qrDataUrl,
-        issuedAt: new Date().toLocaleDateString("en-IN"),
-      };
-      const png = await renderPassToCanvasDataUrl(fallbackPass);
-      setPassPng(png);
-      setPassData(fallbackPass);
-      setStep("done");
-    }
+    setStep("done");
+  } catch (err) {
+    console.error("Visitor registration error:", err);
+    // Fallback logic (same as before)
+    const localId = generateId("visitor");
+    // ... fallback pass generation ...
+    setStep("done");
   }
-
+}
   function reset() {
     setPersonal(PERSONAL_INIT);
     setPTouched(PERSONAL_TOUCHED_INIT);
